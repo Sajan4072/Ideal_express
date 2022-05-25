@@ -1,5 +1,8 @@
 module.exports = {
-  content: ["./pages/**/*.{tsx,js,html}"],
+  content: [
+            "./pages/**/*.{tsx,js,html}",
+            "./layouts/**/*.{tsx,js,html}",
+          ],
   theme: {
     extend: {
       transitionTimingFunction:{
@@ -15,7 +18,8 @@ module.exports = {
       },
    animation: {
         wiggle: 'wiggle 0.3s ease-in-out  ',
-        fadeInDown:'fadeInDown 1s ease-in-out'
+        fadeInDown:'fadeInDown 1s ease-in-out',
+        pulse2: 'pulsing 1.5s infinite linear'
       },
       keyframes: {
         wiggle: {
@@ -36,7 +40,24 @@ module.exports = {
               '-webkit-transform': 'none',
               transform: 'none'
             }
-        }
+        },
+        pulsing :{
+          '0%':{
+                '-webkit-transform':'scale(1)',
+              '-moz-transform':'scale(1)',
+              '-ms-transform':'scale(1)',
+              '-o-transform':'scale(1)',
+              transform:'scale(1)',
+          },
+          '100%':{
+              "-webkit-transform":"scale(1.1)",
+              "-moz-transform":"scale(1.1)",
+              "-ms-transform":"scale(1.1)",
+              "-o-transform":"scale(1.1)",
+              transform:'scale(1.1)',
+              opacity:"0"
+          }
+      }
       },
       colors: {
         'transparent': 'rgba(255,255,255,.15)',

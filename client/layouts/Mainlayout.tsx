@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React from "react";
-
+import Footer from './Footer'
+import Header from './Header'
 export default function MainLayout({ children,title }:{children:React.ReactNode,title:string}) {
   return (
     <>
@@ -11,7 +12,9 @@ export default function MainLayout({ children,title }:{children:React.ReactNode,
        <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'></link>
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.0/css/font-awesome.min.css" integrity="sha512-FEQLazq9ecqLN5T6wWq26hCZf7kPqUbFC9vsHNbXMJtSZZWAcbJspT+/NEAQkBfFReZ8r9QlA9JHaAuo28MTJA==" crossorigin="anonymous" referrerPolicy="no-referrer" />
       </Head>
-      <main className="">{children}</main>
+      <Header/>
+      <main className="font-roboto text-gray-800  ">{children}</main>
+      <Footer />
     </>
   )
 }
