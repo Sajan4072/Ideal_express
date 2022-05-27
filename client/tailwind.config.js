@@ -18,15 +18,23 @@ module.exports = {
       },
    animation: {
         wiggle: 'wiggle 0.3s ease-in-out  ',
-        fadeInDown:'fadeInDown 1s ease-in-out',
+        fadeInDown:'fadeInDown 0.6s ease-in-out',
+        dropdown:'dropdown 0.6s ease-in-out',
+        modal:'modal 0.6s ease',
         pulse2: 'pulsing 1.5s infinite linear'
       },
       keyframes: {
         wiggle: {
           '0%': { width:'0rem' },
-          '10%': { width:'0.5rem' },
-          '30%': { width:'1rem' },
-          '60%': { width: '2rem' },
+          '10%': { width:'0.3rem' },
+          '20%': { width:'0.6rem' },
+          '30%': { width:'0.9rem' },
+          '40%': { width: '1.2rem' },
+          '50%': { width: '1.5rem' },
+          '60%': { width: '1.8rem' },
+          '70%': { width: '2.1rem' },
+          '80%': { width: '2.4rem' },
+          '90%': { width: '2.7rem' },
           '100%':{width:'3rem'}
         },
         fadeInDown :{
@@ -34,6 +42,30 @@ module.exports = {
             opacity: '0',
              '-webkit-transform': 'translate3d(0, -100%, 0)',
              transform: 'translate3d(0, -100%, 0)'
+          },
+         'to': {
+              opacity: '1',
+              '-webkit-transform': 'none',
+              transform: 'none'
+            }
+        },
+        dropdown :{
+          'from':{
+            opacity: '1',
+             '-webkit-transform': 'translate3d(0, -5%, 0)',
+             transform: 'translate3d(0, -5%, 0)'
+          },
+         'to': {
+              opacity: '1',
+              '-webkit-transform': 'none',
+              transform: 'none'
+            }
+        },
+        modal :{
+          'from':{
+            opacity: '0',
+             '-webkit-transform': 'translate3d(-100, -100%, -100%)',
+             transform: 'translate3d(-100%, -100%, -100%)'
           },
          'to': {
               opacity: '1',

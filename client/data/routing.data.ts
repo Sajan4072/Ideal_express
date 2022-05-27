@@ -1,44 +1,41 @@
-interface MenuInterface{
-    name:string;
-    url:string;
+interface MenuInterface {
+  name: string;
+  url: string;
 }
 
-const data:MenuInterface[]=[
+const data: MenuInterface[] = [
+  {
+    name: "Home",
+    url: "/",
+  },
+  {
+    name: "Service",
+    url: "/service",
+  },
+  {
+    name: "Contactus",
+    url: "/contactus",
+  },
+  {
+    name: "Aboutus",
+    url: "/aboutus",
+  },
+  {
+    name: "Network",
+    url: "/network",
+  },
+  {
+    name: "Gallery",
+    url: "/gallery",
+  },
+  {
+    name: "Branches",
+    url: "/gallery",
+  },
+  {
+    name: "Support",
+    url: "/gallery",
+  },
+];
 
-    {
-     name:'Home',
-     url:"/"
-    },
-    {
-      name:'Service',
-      url:'/service'
-    },
-    {
-        name:'Contactus',
-        url:'/contactus'
-    },
-    {
-        name:'Aboutus',
-        url:'/aboutus'
-    },
-    {
-        name:'Network',
-        url:'/aboutus'
-    },
-    {
-        name:'Gallery',
-        url:'/gallery'
-    },
-   {
-        name:'Branches',
-        url:'/gallery'
-    },
-    {
-        name:'Support',
-        url:'/gallery'
-    }
-]
-
-export {
-    data as MenuData
-}
+export { data as MenuData };
