@@ -8,6 +8,9 @@
         background: rgb(181,74,11);
 background: linear-gradient(90deg, rgba(181,74,11,1) 50%, rgba(251,251,251,1) 50%);
     }
+    .active-nav{
+        @apply border-l-gray-700 bg-gray-200 
+    }
 }
 
 @layer base{
