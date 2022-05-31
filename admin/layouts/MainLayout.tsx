@@ -14,14 +14,12 @@ const MainLayout = ({ title, children }: { title: string, children: React.ReactN
             </Head>
             <div className="flex flex-wrap bg-gray-100 w-full h-screen font-roboto ">
                 <Navbar collapse={collapse} setCollapse={setCollapse} />
-                <div className="flex overflow-hidden bg-white pt-16">
+                <div className="flex overflow-hidden bg-white pt-[3.8rem]">
                     <Sidebar collapse={collapse} />
                 </div>
-                <div className={`h-full w-full animate-slow bg-gray-50 relative  ${collapse ? 'lg:ml-[3.5rem]' : 'lg:ml-[15rem]'}`}>
-                    <div className="pt-2 px-2">
-                        <div className="bg-white shadow rounded-sm px-5 py-3 pb-1  ">
-                            {children}
-                        </div>
+                <div className={`h-full w-full animate-slow bg-gray-50 relative p-1.5  ${collapse ? 'lg:ml-[3.5rem]' : 'lg:ml-[15rem]'}`}>
+                    <div className="bg-white shadow rounded-sm px-5 py-3   ">
+                        {children}
                     </div>
                 </div>
             </div>

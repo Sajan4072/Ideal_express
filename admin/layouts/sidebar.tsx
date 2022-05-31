@@ -44,6 +44,15 @@ const Sidebar = ({ collapse }: { collapse: boolean }) => {
             </ul>
           </div>
         </div>
+        {
+          collapse ||
+          <div className='absolute w-full  bottom-2'>
+            <div className=' text-center w-full '>
+              <p className='font-bold text-gray-600 cursor-pointer text-xs hover:text-gray-900 '>Developed by jit rana magar</p>
+              <p className='font-bold font-roboto text-orange-500 text-xs'>@Ideal Courier Admin {new Date().getFullYear()}</p>
+            </div>
+          </div>
+        }
       </div>
     </aside>
   )
@@ -68,7 +77,7 @@ const Drawer = ({ content, collapse, activeNav, setActiveNav, parentNav }: { con
   }, [])
   return (
     <>
-      <button title='button' onClick={handleShow} type="button" className={` ${!show && activeNav === parentNav ? 'active-nav' : 'border-white'} ${collapse && activeNav === parentNav ? 'active-nav' : 'border-white'}   font-bold w-full text-gray-900 hover:border-l-4 border-l-4  rounded-l-sm  flex items-center py-1.5 px-4 group `} >
+      <button title='button' onClick={handleShow} type="button" className={` ${!show && activeNav === parentNav && 'active-nav'} ${collapse && activeNav === parentNav ? 'active-nav' : 'border-white'}   font-bold w-full text-gray-900 hover:border-l-4 border-l-4  rounded-l-sm  flex items-center py-1.5 px-4 group `} >
         {content.icon}
         <span className={`${collapse && 'hidden'}   flex-1 ml-3 text-left whitespace-nowrap`} sidebar-toggle-item>{content.title}</span>
         {show ? <MdKeyboardArrowDown size={25} className={`animate-slow ${collapse && 'hidden'}`} /> : <MdKeyboardArrowRight size={25} className={`animate-slow ${collapse && 'hidden'}`} />}

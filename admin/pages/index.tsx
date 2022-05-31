@@ -12,6 +12,7 @@ export default Home
 
 
 const Login = () => {
+
   return (
     <div className='h-screen flex justify-center  bg-login'>
       <div className="flex  w-1/3 justify-center items-center">

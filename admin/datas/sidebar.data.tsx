@@ -1,17 +1,8 @@
-import React, { ReactElement } from "react";
 import {
   HouseFill,
-  Speedometer,
-  Truck,
-
-  BookmarkPlusFill,
-  MortarboardFill,
-  PersonBoundingBox,
-  FileEarmarkPdfFill,
 } from "react-bootstrap-icons";
-import { FcShipped, FcHome } from "react-icons/fc";
 import { MdLocalShipping, MdRemoveRedEye, MdOutlineDrafts } from "react-icons/md";
-import { BsPlus, BsPlusSquare, BsTagsFill } from "react-icons/bs";
+import { BsTagsFill } from "react-icons/bs";
 import { FaPlus, FaUserCircle, FaUsersCog, FaUserPlus, FaUserClock } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { ImBlogger } from "react-icons/im";
@@ -47,7 +38,7 @@ export const sidebarData: Sidebar[] = [
       },
       {
         title: "Draft",
-        url: "/shipment",
+        url: "/shipment/draft",
         icon: <MdOutlineDrafts size={20} />,
       },
       {
