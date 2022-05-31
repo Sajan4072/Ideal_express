@@ -15,10 +15,10 @@ Including another URLconf
 """
 from xml.etree.ElementInclude import include
 from django.contrib import admin
-from django.urls import path,inlcude
+from django.urls import path,include
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('',include('apps.user.urls'))
+    # path('',include('apps.user.urls'))
 
 ]
