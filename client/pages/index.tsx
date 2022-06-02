@@ -15,6 +15,7 @@ const HomePage = () => {
       <Section1 setShowModal={setShowModal} />
       <Section2 />
       <Section3 />
+      <RequestQuote />
       <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   )
@@ -25,7 +26,7 @@ const Section1 = ({ setShowModal }: { setShowModal: (set: boolean) => void }) =>
       <div className='shadow-sm  overflow-hidden min-h-[100vh]  z-0 bg-center bg-cover' style={{ backgroundImage: 'url(/wallpaper/walpaper.jpg)' }}>
         <div className='text-white  pt-28 h-[10h] px-2 md:px-24  bg-black bg-opacity-80 w-full flex  justify-center items-center '>
           <div className='w-full text-center'>
-            <p className='md:text-5xl text-3xl my-8 font-bold'>Discover a better Logistic service with IDEAL EXPRESS</p>
+            <p className='md:text-3xl text-3xl my-8 font-bold'>Discover a better Logistic service with IDEAL EXPRESS</p>
             <p className='text-2xl  mb-4'><span>Track your goods</span></p>
 
             <div className='flex justify-center pb-8 items-center flex-wrap'>
@@ -278,6 +279,68 @@ const Modal = ({ showModal, setShowModal }: { showModal: boolean, setShowModal: 
               </tr>
             </tbody>
           </table>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const RequestQuote = () => {
+  return (
+    <div className='bg-slate-100 relative '>
+      <div className='container mx-auto px-10  pb-5'>
+        <div className='flex -mt-[3.5rem] absolute     z-10'>
+          <div className='py-4 px-6 font-sm font-bold text-white bg-orange-500'>Request A Quote</div>
+          <div className='py-4 px-6 bg-black bg-opacity-30 font-bold text-white'>
+            <p className='text-white'>Track and Trace</p>
+          </div>
+        </div>
+        <div className='bg-white px-12 py-3'>
+          <div className='grid grid-cols-12 gap-4'>
+            <div className='col-span-8'>
+              <div>
+                <p className='text-base font-bold'>Personal data</p>
+                <div className='grid grid-cols-3 gap-3 pt-2'>
+                  <div>
+                    <input title='name' type="text" placeholder='Name' className='placeholder:text-gray-400  px-3 py-2 w-full focus:outline-none hover:border-orange-600 border border-gray-300' />
+                  </div>
+                  <div>
+                    <input title='name' type="text" placeholder='Email' className='placeholder:text-gray-400 px-3 py-2 w-full focus:outline-none hover:border-orange-600 border border-gray-300' />
+                  </div>
+                  <div>
+                    <input title='name' type="text" placeholder='Phone' className='placeholder:text-gray-400 px-3 py-2 w-full focus:outline-none hover:border-orange-600 border border-gray-300' />
+                  </div>
+                </div>
+              </div>
+
+              <div className='pt-2'>
+                <p className='text-base font-bold'>Personal data</p>
+                <div className='grid grid-cols-3 gap-3 pt-2'>
+                  <div>
+                    <input title='name' type="text" className='px-3 py-2 rounded-sm w-full focus:outline-none hover:border-orange-600 border border-gray-300' />
+                  </div>
+                  <div>
+                    <input title='name' type="text" className='px-3 py-2 rounded-sm w-full focus:outline-none hover:border-orange-600 border border-gray-300' />
+                  </div>
+                  <div>
+                    <input title='name' type="text" className='px-3 py-2 rounded-sm   w-full focus:outline-none hover:border-orange-600 border border-gray-300' />
+                  </div>
+                </div>
+              </div>
+              <div className='pt-2'>
+                <button type='button' className='w-full text-white bg-black hover:bg-gray-900 p-3'>Request A quote</button>
+              </div>
+            </div>
+            <div className='col-span-4 bg-orange-500 mx-5'>
+              <div className='text-center  py-2  text-white px-5'>
+                <p className='text-2xl font-bold my-3'>
+                  How can we help you
+                </p>
+                <p className='mb-3 font-xs'>We Understand the importance approaching each work integrally and believe in the power of simple and easy communication </p>
+                <button className='px-3 py-2 rounde-sm text-center bg-black text-white'>contact us</button>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
