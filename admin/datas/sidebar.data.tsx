@@ -9,7 +9,7 @@ import { ImBlogger } from "react-icons/im";
 
 export interface Sidebar {
   title: string;
-  url: string;
+  url?: string;
   icon: React.ReactNode;
   isSubtitle: boolean;
   subTitle?: {
@@ -91,32 +91,31 @@ export const sidebarData: Sidebar[] = [
     isSubtitle: false,
   },
   {
-    title: "Profile",
-    url: "/dashboard",
-    icon: <FaUserCircle size={20} />,
-    isSubtitle: false,
-  },
-  {
     title: "User Management",
-    url: "/shipment",
     icon: <FaUsersCog size={20} color="black" className="text-black" />,
     isSubtitle: true,
     subTitle: [
       {
         title: "View",
-        url: "/shipment",
+        url: "/user",
         icon: <MdRemoveRedEye size={20} />,
       },
       {
         title: "Create User",
-        url: "/shipment",
+        url: "/user/create",
         icon: <FaUserPlus size={20} />,
       },
       {
         title: "Role",
-        url: "/shipment/create",
+        url: "/user/role",
         icon: <FaUserClock size={20} />,
       },
     ],
+  },
+  {
+    title: "Test Page",
+    url: "/text",
+    icon: <HouseFill size={20} />,
+    isSubtitle: false,
   },
 ];

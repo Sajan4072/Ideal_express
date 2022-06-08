@@ -7,11 +7,13 @@ interface Container {
 }
 const Container = ({ children, title, icon }: Container) => {
   return (
-    <div className='block w-full overflow-x-auto flex-1 animate-slow'>
-      <div className='flex justify-between mt-2 mb-3 pb-2 '>
-        <p className='  text-xl font-bold'>{title}</p>
-        {icon}
-      </div>
+    <div className='block w-full overflow-x-auto flex-1 animate-slow '>
+      {title !== '' &&
+        <div className='flex justify-between mt-2 mb-2  '>
+          <p className='  text-xl font-bold'>{title}</p>
+          {icon}
+        </div>
+      }
       {children}
     </div>
   )

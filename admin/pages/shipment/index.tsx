@@ -92,7 +92,7 @@ export const Shipment = () => {
                     :
                     <Container title='Shipment Table' icon={<RiTableAltFill size={20} />}>
 
-                        <div className="flex justify-between  mb-2">
+                        <div className="flex justify-between  mb-2 py-1 ">
                             <select title="d" className='w-1/4 text-xs py-1.5 text-gray-600 border focus:outline-none border-gray-300 rounded-md'>
                                 <option className='text-gray-500 text-xs' value={''} disabled selected>------ CHOICE BY COURSE ------</option>
                                 <option value="">d</option>
@@ -115,8 +115,8 @@ export const Shipment = () => {
                                 </button>
                             </Link>
                         </div>
-                        <div className="relative overflow-x-auto shadow-t-md sm:rounded-t-lg">
-                            <table className="w-full text-sm text-left text-white dark:text-gray-400">
+                        <div className="relative overflow-x-auto shadow-t-md sm:rounded-t-lg bg-slate-50">
+                            <table className="w-full text-sm text-left text-white bg-slate-50 dark:text-gray-400">
                                 <thead className="text-xs text-white font-bold uppercase bg-slate-500">
                                     <tr>
                                         <th scope="col" className="px-6 py-3">

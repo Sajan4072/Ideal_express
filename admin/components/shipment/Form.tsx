@@ -16,9 +16,9 @@ const Form = ({ edit, setEdit, className }: FormProps) => {
     }, [edit, setEdit])
     return (
 
-        <form className={`${className}`}>
+        <form className={`${className} `}>
             {/* add shipemnt  */}
-            <div className={`shadow-lg px-3 pb-3 my-2 `}>
+            <div className={`shadow-sm px-3 pb-3 my-2 pt-3 bg-slate-50`}>
                 <p className='px-2 py-1.5 text-sm font-bold border-l-4 border-l-gray-900 bg-gray-400 text-white rounded-l-sm'>Create Shipment Id</p>
                 <div className='py-2'>
                     <p className='flex gap-3 mt-3 text-gray-900 text-base font-bold underline'><span>Shipment Track Id</span> <BsFillKeyFill size={18} /></p>
@@ -26,7 +26,7 @@ const Form = ({ edit, setEdit, className }: FormProps) => {
                 </div>
             </div>
             {/* shippmet details  */}
-            <div className='shadow-lg p-3 py-2'>
+            <div className='shadow-sm bg-slate-50 p-3  my-2'>
                 <p className='px-2 py-1.5 text-sm font-bold border-l-4 border-l-gray-900 bg-gray-400 text-white rounded-l-sm'>Shipment Details</p>
                 <div>
                     <p className='flex gap-3 mt-3 text-gray-900 text-base font-bold underline'><span>Shipper Details</span> <IoPerson size={18} /></p>
@@ -187,7 +187,7 @@ const Form = ({ edit, setEdit, className }: FormProps) => {
                     </div>
                 </div>
             </div>
-            <div className='shadow-lg p-3 my-4'>
+            <div className='shadow-sm bg-slate-50 p-3 my-4'>
                 <p className='px-2 py-1.5 text-sm font-bold border-l-4 border-l-gray-900 bg-gray-400 text-white rounded-l-sm'>Publish</p>
                 <div>
                     <p className='flex gap-3 mt-3 text-gray-900 text-base font-bold underline'><span>Shipper Details</span> <IoPerson size={18} /></p>
@@ -221,7 +221,7 @@ const Form = ({ edit, setEdit, className }: FormProps) => {
                     </div>
                 </div>
             </div>
-            <div className='mt-3 shadow-lg p-3 my-4 flex flex-row-reverse gap-2'>
+            <div className='mt-3 shadow-md p-3 my-4 flex flex-row-reverse gap-2'>
                 <button type="button" className='bg-gray-600 hover:bg-gray-800 text-white rounded-md py-1 px-3 text-sm flex items-center gap-2'><span>Save</span> <IoSave size={15} /></button>
 
                 {

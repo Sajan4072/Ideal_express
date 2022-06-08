@@ -26,7 +26,8 @@ module.exports = {
         slow:'slow 0.8s ease-in-out',
         sidebarDraw:'sidebarDraw 0.8s ease-in-out',
         modal:'modal 0.6s ease',
-        pulse2: 'pulsing 1.5s infinite linear'
+        pulse2: 'pulsing 1.5s infinite linear',
+        spin: 'spin 3s infinite linear'
       },
       keyframes: {
         wiggle: {

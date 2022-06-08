@@ -15,11 +15,11 @@ const Sidebar = ({ collapse }: { collapse: boolean }) => {
     }
   }, [])
   return (
-    <aside className={`fixed hidden  z-20 h-full top-0 left-0 pt-[3.8rem] lg:flex flex-shrink-0 flex-col ${collapse ? 'w-[3.5rem]  animate-sidebarDraw' : ' w-[15rem]'} bg-white `}>
-      <div className="relative flex-1 flex flex-col min-h-0 border-r border-gray-200   pt-0">
-        <div className="flex-1 flex flex-col pt-5 pb-4 overflow-y-auto">
-          <div className="flex-1  divide-y space-y-1">
-            <ul className="space-y-2 pb-2 font-bold text-xs">
+    <aside className={`fixed hidden  z-20 h-full top-0 left-0 pt-[3.8rem] lg:flex flex-shrink-0 flex-col ${collapse ? 'w-[3.5rem]   ' : ' w-[15rem] '} transition-all duration-500  bg-white `}>
+      <div className="relative mt-2 flex-1 flex flex-col  border-r border-gray-200 overflow-y-auto">
+        <div className="  flex flex-col   ">
+          <div className="flex-1  divide-y space-y-1 ">
+            <ul className="space-y-1 pb-2 font-bold text-xs">
               {
                 sidebarData.map((content, index) => {
                   return (
@@ -27,7 +27,7 @@ const Sidebar = ({ collapse }: { collapse: boolean }) => {
                       {
                         content.isSubtitle === false ?
 
-                          <Link href={content.url}>
+                          <Link href={content.url!}>
                             <a onClick={() => handleNav(index)} className={`${activeNav === index ? 'active-nav' : 'border-white'}   border-b-2 border-b-transparent hover:bg-gray-200 hover:border-l-4 border-l-4  hover:border-l-gray-700 text-gray-900 font-normal rounded-l-sm flex items-center py-1.5 px-4 group`}>
                               {content.icon}
                               <span className={`ml-3 font-bold ${collapse && 'hidden'}`}>{content.title}</span>
@@ -44,16 +44,17 @@ const Sidebar = ({ collapse }: { collapse: boolean }) => {
             </ul>
           </div>
         </div>
-        {
-          collapse ||
-          <div className='absolute w-full  bottom-2'>
-            <div className=' text-center w-full '>
-              <p className='font-bold text-gray-600 cursor-pointer text-xs hover:text-gray-900 '>Developed by jit rana magar</p>
-              <p className='font-bold font-roboto text-orange-500 text-xs'>@Ideal Courier Admin {new Date().getFullYear()}</p>
-            </div>
-          </div>
-        }
+
       </div>
+      {
+        collapse ||
+        <div className='my-2 w-full  bottom-2'>
+          <div className=' text-center w-full '>
+            <p className='font-bold text-gray-600 cursor-pointer text-xs hover:text-gray-900 '>Developed by jit rana magar</p>
+            <p className='font-bold font-roboto text-orange-500 text-xs'>@Ideal Courier Admin {new Date().getFullYear()}</p>
+          </div>
+        </div>
+      }
     </aside>
   )
 };
@@ -77,18 +78,18 @@ const Drawer = ({ content, collapse, activeNav, setActiveNav, parentNav }: { con
   }, [])
   return (
     <>
-      <button title='button' onClick={handleShow} type="button" className={` ${!show && activeNav === parentNav && 'active-nav'} ${collapse && activeNav === parentNav ? 'active-nav' : 'border-white'}   font-bold w-full text-gray-900 hover:border-l-4 border-l-4  rounded-l-sm  flex items-center py-1.5 px-4 group `} >
+      <button title='button' onClick={handleShow} type="button" className={` ${!show && activeNav === parentNav && 'active-nav'} ${collapse && activeNav === parentNav && 'active-nav'} ${!collapse ? activeNav !== parentNav ? 'border-white' : show && 'border-white' : activeNav !== parentNav && 'border-white'}   font-bold w-full text-gray-900 hover:border-l-4 border-l-4  rounded-l-sm  flex items-center py-1.5 px-4 group `} >
         {content.icon}
-        <span className={`${collapse && 'hidden'}   flex-1 ml-3 text-left whitespace-nowrap`} sidebar-toggle-item>{content.title}</span>
+        <span className={`${collapse && 'hidden'}   flex-1 ml-3 text-left whitespace-nowrap`} >{content.title}</span>
         {show ? <MdKeyboardArrowDown size={25} className={`animate-slow ${collapse && 'hidden'}`} /> : <MdKeyboardArrowRight size={25} className={`animate-slow ${collapse && 'hidden'}`} />}
       </button>
-      <ul className={` animate-dropdown ${show ? "block" : "hidden"}  ${collapse && 'hidden'} `}>
+      <ul className={` animate-dropdown transition duration-700 ${show ? "block" : "hidden"}  ${collapse && 'hidden'} `}>
         <li>
           {
             content.subTitle.map((data: any, index: number) => {
               return (
-                <Link href={data.url}>
-                  <a onClick={() => { setActiveNav(parentNav); handleNav(index) }} className={` ${show && !collapse && activeNav === parentNav && currentNav === index ? 'active-nav' : 'border-white'} pl-11 border-l-4 hover:border-l-4 text-gray-900  font-normal rounded-l-sm hover:border-gray-700 hover:bg-gray-200 flex items-center bg py-1.5 group `}>
+                <Link key={index} href={data.url}>
+                  <a onClick={() => { setActiveNav(parentNav); handleNav(index) }} className={` ${show && !collapse && activeNav === parentNav && currentNav === index ? 'active-nav' : 'border-white'} my-1 pl-11 border-l-4 hover:border-l-4 text-gray-900  font-normal rounded-l-sm hover:border-gray-700 hover:bg-gray-200 flex items-center bg py-1.5 group `}>
                     {data.icon}
                     <span className=' ml-3 font-bold'>{data.title}</span>
                   </a>

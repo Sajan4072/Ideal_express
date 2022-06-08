@@ -2,6 +2,7 @@
   "name": "admin",
   "version": "0.1.0",
   "private": true,
+  "author":"jit Rana magar",
   "scripts": {
     "dev:*": "next dev -p 2200",
     "build": "next build",
