@@ -35,4 +35,5 @@ yarn-error.log*
 *.tsbuildinfo
 
 #ignore css file
+/styles
 /styles/global.css

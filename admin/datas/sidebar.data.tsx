@@ -3,7 +3,7 @@ import {
 } from "react-bootstrap-icons";
 import { MdLocalShipping, MdRemoveRedEye, MdOutlineDrafts } from "react-icons/md";
 import { BsTagsFill } from "react-icons/bs";
-import { FaPlus, FaUserCircle, FaUsersCog, FaUserPlus, FaUserClock } from "react-icons/fa";
+import { FaPlus, FaUsersCog, FaUserPlus, FaUserClock } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { ImBlogger } from "react-icons/im";
 
@@ -28,7 +28,7 @@ export const sidebarData: Sidebar[] = [
   {
     title: "Shipment",
     url: "/shipment",
-    icon: <MdLocalShipping size={20} color="black" className="text-black" />,
+    icon: <MdLocalShipping size={20} />,
     isSubtitle: true,
     subTitle: [
       {
@@ -51,7 +51,7 @@ export const sidebarData: Sidebar[] = [
   {
     title: "Category",
     url: "/category",
-    icon: <BiCategory size={20} color="black" className="text-black" />,
+    icon: <BiCategory size={20} />,
     isSubtitle: true,
     subTitle: [
       {
@@ -69,7 +69,7 @@ export const sidebarData: Sidebar[] = [
   {
     title: "Post",
     url: "/category",
-    icon: <ImBlogger size={20} color="black" className="text-black" />,
+    icon: <ImBlogger size={20} />,
     isSubtitle: true,
     subTitle: [
       {
@@ -92,7 +92,7 @@ export const sidebarData: Sidebar[] = [
   },
   {
     title: "User Management",
-    icon: <FaUsersCog size={20} color="black" className="text-black" />,
+    icon: <FaUsersCog size={20} />,
     isSubtitle: true,
     subTitle: [
       {

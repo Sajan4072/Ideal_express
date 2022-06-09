@@ -17,7 +17,7 @@ const MainLayout = ({ title, children }: { title: string, children: React.ReactN
                     <Sidebar collapse={collapse} />
                 </div>
                 <div className={`h-full transition-all duration-500 w-full animate-slow  relative px-1 py-1 ${collapse ? 'lg:ml-[3.5rem]' : 'lg:ml-[15rem]'}`}>
-                    <div className=" shadow rounded-sm px-5 py-3   ">
+                    <div className=" rounded-sm px-5 py-3   ">
                         {children}
                     </div>
                 </div>

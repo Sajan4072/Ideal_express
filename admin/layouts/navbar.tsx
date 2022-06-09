@@ -5,16 +5,15 @@ import { IoSettings } from "react-icons/io5";
 import { MdClear } from "react-icons/md";
 import { CgProfile } from 'react-icons/cg';
 import { useGlobalContext } from '../contexts/GlobalContext';
+import Link from 'next/link';
 const Navbar = ({ collapse, setCollapse }: { collapse: boolean, setCollapse: (set: boolean) => void }) => {
     const global = useGlobalContext();
     return (
         <nav className="bg-white border-b fixed z-30 w-full text-sm shadow-sm">
             <div className="px-3 py-4">
                 <div className="flex  items-center justify-between">
-                    <div className={`${collapse ? 'w-[19%]' : 'w-[19%]'} flex items-center justify-between`}>
-                        <div className="text-xl   font-bold flex items-center px-1 ">
-                            <span className='font-bold text-orange-500'>IDEAL</span><span className='text-idealColor'>Courier Admin</span>
-                        </div>
+                    <div className={`${collapse ? 'w-[19%]' : 'w-[19%]'} flex items-center justify-end`}>
+
                         <div className='text-xl cursor-pointer animate-slow'>
                             {collapse ? <AiOutlineMenu onClick={() => setCollapse(!collapse)} className='text-xl animate-slow ' /> : <MdClear onClick={() => setCollapse(!collapse)} className='text-xl animate-slow' />}
 
@@ -37,8 +36,13 @@ const Navbar = ({ collapse, setCollapse }: { collapse: boolean, setCollapse: (se
 
                             </div>
                             <div className='leading-4 text-center text-gray-600 text-xs'>
-                                <p>{global?.user?.name || 'jit'}</p>
-                                <p className='text-xs'>Admin</p>
+                                <Link href={'/user/profile'}>
+                                    <div>
+                                        <p>{global?.user?.name || 'jit'}</p>
+                                        <p className='text-xs'>Admin</p>
+                                    </div>
+                                </Link>
+
                             </div>
                         </div>
 

@@ -25,10 +25,10 @@ const GlobalContextProvider = ({ children, loggedUser }: { children: React.React
     const [user, setUser] = useState<User>(defaultValueForContext.user);
 
     useEffect(() => {
-        alert('component mount')
+        // alert('component mount')
 
         return () => {
-            alert("component unmount")
+            // alert("component unmount")
         }
     }, [])
     useEffect(() => {
