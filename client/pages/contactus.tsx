@@ -17,7 +17,7 @@ const Contactus = () => {
                 <div className='text-white  pt-48 pb-28 h-[10h] px-2 md:px-24  bg-black bg-opacity-60 w-full flex  justify-center items-center '>
                     <div className='grid grid-cols-2 items-start w-full'>
                         <div className='justify-self-start'>
-                            <p><span><Link href={'/'}>Home</Link></span> > <span className='text-orange-500'>contactus</span></p>
+                            <p><span><Link href={'/'}>Home</Link></span> | <span className='text-orange-500'>contactus</span></p>
                             <p className='text-4xl font-bold'>Contact us</p>
                         </div>
                     </div>

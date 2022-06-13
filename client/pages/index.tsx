@@ -71,24 +71,25 @@ const Section2 = () => {
         <div className='   text-left grid grid-cols-12'>
           <div className='md:col-span-5 col-span-12'>
             <p className='text-orange-500 font-roboto mb-3  font-bold col-span-3'>Your Package, Your Rules</p>
-            <p className='text-2xl font-bold font-work-sans'>We Continue To Pursue That Same Vision In Today's Complex, Uncertain World, Working Every Day</p>
+            <p className='text-2xl font-bold font-work-sans'>We Continue To Pursue That Same Vision In Today&apos; Complex, Uncertain World, Working Every Day</p>
           </div>
         </div>
         <div className='grid md:grid-cols-4 grid-cols-2 md:gap-3 gap-2 mt-10'>
           {
-            [0, 0, 0, 0, 0, 0].map(() => {
+            [0, 0, 0, 0, 0, 0].map((data, index) => {
 
-              return (<div className='border p-3 rounded-md cursor-pointer group hover:border-orange-500'>
-                <div>
-                  <img src="/icon/credit-card.png" className='w-10 group-hover:animate-bounce h-18' alt="" />
+              return (
+                <div key={index} className='border p-3 rounded-md cursor-pointer group hover:border-orange-500'>
+                  <div>
+                    <img src="/icon/credit-card.png" className='w-10 group-hover:animate-bounce h-18' alt="" />
+                  </div>
+                  <div>
+                    <p className='group-hover:text-orange-500 text-gray-800 text-lg font-roboto mb-2 mt-3  font-bold col-span-3'>Transparent Price</p>
+                  </div>
+                  <div>
+                    <p className='text-base text-gray-400 '>The world of international supply chains involves a myriad of unknown risks and challenging regulations.</p>
+                  </div>
                 </div>
-                <div>
-                  <p className='group-hover:text-orange-500 text-gray-800 text-lg font-roboto mb-2 mt-3  font-bold col-span-3'>Transparent Price</p>
-                </div>
-                <div>
-                  <p className='text-base text-gray-400 '>The world of international supply chains involves a myriad of unknown risks and challenging regulations.</p>
-                </div>
-              </div>
               )
             })
           }
@@ -149,7 +150,7 @@ const Section3 = () => {
               <div className='grid grid-cols-2 gap-y-8 gap-x-5'>
                 {data.map((current, index) => {
                   return (
-                    <div className='justify-self-center'>
+                    <div key={index} className='justify-self-center'>
                       <div className='flex justify-center'><img src="/icon/global64px.png" alt="" /></div>
                       <div className='flex mt-2 items-center flex-col gap-2'>
                         <p className='text-3xl font-bold'>{current.count}<span className='pl-1'>+</span></p>

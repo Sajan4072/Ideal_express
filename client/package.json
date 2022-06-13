@@ -3,8 +3,9 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "start": "concurrently npm:dev:*",
+    "start-dev": "concurrently npm:dev:*",
     "dev:": "next dev -p 3200",
+    "start-prod": "next start",
     "dev:tailwind":"npx tailwindcss -i ./styles/index.css -o ./styles/globals.css --watch",
     "build": "next build",
     "lint": "next lint"
