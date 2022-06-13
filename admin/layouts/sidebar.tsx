@@ -15,7 +15,7 @@ const Sidebar = ({ collapse }: { collapse: boolean }) => {
     }
   }, [])
   return (
-    <aside className={`fixed hidden border-r border-gray-200  z-40 h-full top-0 left-0  lg:flex flex-shrink-0 flex-col ${collapse ? 'w-[3.5rem]  pt-[m] ' : ' w-[15rem] '} transition-all duration-500  bg-white `}>
+    <aside className={`fixed hidden border-r bg-gray-50 border-gray-200  z-40 h-full top-0 left-0  lg:flex flex-shrink-0 flex-col ${collapse ? 'w-[3.5rem]  pt-[m] ' : ' w-[15rem] '} transition-all duration-500  bg-white `}>
       <div className="relative mt-2 flex-1 flex flex-col  overflow-y-auto">
         <div className={`text-xl   font-bold flex items-center py-[1rem] px-1  `}>
           <img src="/delivery-man.png" className='' alt="" />

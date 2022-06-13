@@ -6,6 +6,8 @@ import { BsTagsFill } from "react-icons/bs";
 import { FaPlus, FaUsersCog, FaUserPlus, FaUserClock } from "react-icons/fa";
 import { BiCategory } from "react-icons/bi";
 import { ImBlogger } from "react-icons/im";
+import { GoGitBranch } from 'react-icons/go';
+import { GrTest } from 'react-icons/gr'
 
 export interface Sidebar {
   title: string;
@@ -113,9 +115,15 @@ export const sidebarData: Sidebar[] = [
     ],
   },
   {
+    title: "Branch",
+    url: "/branch",
+    icon: <GoGitBranch size={20} />,
+    isSubtitle: false,
+  },
+  {
     title: "Test Page",
-    url: "/text",
-    icon: <HouseFill size={20} />,
+    url: "/test",
+    icon: <GrTest size={20} />,
     isSubtitle: false,
   },
 ];

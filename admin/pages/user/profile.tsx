@@ -1,6 +1,5 @@
 import { GetServerSideProps, GetServerSidePropsContext } from 'next'
-import Image from 'next/image'
-import React, { ReactElement, useState } from 'react'
+import React, { useState } from 'react'
 import Container from '../../layouts/Container'
 const profile = () => {
     return (
@@ -18,19 +17,19 @@ export const Profile = () => {
 
     return (
         <Container title='User Profile'>
-            <div className='container mx-auto px-5 pt-3'>
+            <div className='container mx-auto px-5 pt-3 '>
                 <div className='flex flex-col'>
-                    <div className='flex gap-[0.1rem] text-sm cursor-pointer'>
-                        <div onClick={() => setCurrentTab(tab[0])} className={` px-10 py-3   text-gray-500  rounded-t-md ${tab[0] === currentTab ? 'border-t-2 border-t-orange-600 bg-slate-50' : ' '}`}>Own Profile</div>
-                        <div onClick={() => setCurrentTab(tab[1])} className={` px-10 py-3  rounded-t-md text-gray-500 ${tab[1] === currentTab ? 'border-t-2 border-t-orange-600 bg-slate-50' : 'bg-slate-10'}`}>Change Password</div>
-                        <div onClick={() => setCurrentTab(tab[2])} className={` px-10 py-3  rounded-t-md text-gray-500 ${tab[2] === currentTab ? 'border-t-2 border-t-orange-600 bg-slate-50' : 'bg-slate-10'}`}>Activity Log</div>
+                    <div className='flex gap-[0.1rem] -mb-[0.05rem] z-10 text-sm cursor-pointer'>
+                        <div onClick={() => setCurrentTab(tab[0])} className={` px-10 py-3  rounded-t-md  ${tab[0] === currentTab ? 'border-x border-t-2 border-t-orange-600 bg-slate-50 text-gray-900' : 'text-gray-500'}`}>Own Profile</div>
+                        <div onClick={() => setCurrentTab(tab[1])} className={` px-10 py-3  rounded-t-md  ${tab[1] === currentTab ? 'border-x border-t-2 border-t-orange-600 bg-slate-50 text-gray-900' : 'text-gray-500'}`}>Change Password</div>
+                        <div onClick={() => setCurrentTab(tab[2])} className={` px-10 py-3  rounded-t-md  ${tab[2] === currentTab ? 'border-x border-t-2 border-t-orange-600 bg-slate-50 text-gray-900' : 'text-gray-500'}`}>Activity Log</div>
                     </div>
-                    <div className={`bg-slate-50 ${tab[0] != currentTab && 'hidden'}`}>
+                    <div className={`bg-slate-50 shadow-lg border-y border-x ${tab[0] != currentTab && 'hidden'}`}>
                         <div className='p-8'>
                             <div className='grid grid-cols-12'>
                                 <div className='col-span-2'>
                                     <div className='w-2/4'>
-                                        <img title='profile' src={'/profile.png'} height={100} width={100} className='border-gray-900   rounded-full w-full ' />
+                                        <img alt='profile' title='profile' src={'/profile.png'} height={100} width={100} className='border-gray-900   rounded-full w-full ' />
                                     </div>
                                 </div>
                                 <div className='col-span-10'>
@@ -56,7 +55,7 @@ export const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`bg-slate-50 ${tab[1] != currentTab && 'hidden'}`}>
+                    <div className={`bg-slate-50 shadow-lg border-y border-x  ${tab[1] != currentTab && 'hidden'}`}>
                         <div className='p-5'>
                             <div className='grid grid-cols-12 gap-x-4'>
                                 <div className='col-span-4 text-sm text-gray-500'>
@@ -91,7 +90,7 @@ export const Profile = () => {
                             </div>
                         </div>
                     </div>
-                    <div className={`bg-slate-50 ${tab[2] != currentTab && 'hidden'}`}>
+                    <div className={`bg-slate-50  shadow-lg border-y border-x  ${tab[2] != currentTab && 'hidden'}`}>
                         <div className='p-5'>
                             Activity section
                         </div>

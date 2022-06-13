@@ -1,6 +1,4 @@
-import type { GetServerSideProps, NextPage } from 'next'
-import Head from 'next/head'
-import Image from 'next/image'
+import type { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next'
 import { At, Key } from 'react-bootstrap-icons';
 const Home: NextPage = () => {
   return (
@@ -57,7 +55,7 @@ const Login = () => {
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   return {
     props: {
       page: '/'

@@ -1,17 +1,20 @@
-import { GetServerSideProps, NextPage } from 'next'
+import { GetServerSideProps, GetServerSidePropsContext, NextPage } from 'next'
 import React, { useEffect } from 'react'
 import { useGlobalContext } from '../contexts/GlobalContext'
-const text: NextPage = () => {
+import Container from '../layouts/Container'
+const test: NextPage = () => {
   return (
     <Text />
   )
 }
 
-export default text
+export default test
 
 
 
 const Text = () => {
+  const global = useGlobalContext();
+
   // const myFunction = () => {
   //   // your logic here
   //   console.log('pressed Esc ✅');
@@ -36,20 +39,23 @@ const Text = () => {
   //   };
   // }, []);
 
-  const global = useGlobalContext();
   useEffect(() => {
     global.setUser({ name: 'jit rana magar', isLoggedin: true })
   }, [])
 
 
   return (
-    <div>
-
-    </div>
+    <Container title='Test page'>
+      hellow test page
+      <div>
+        {process.env.sourceApi}
+        {process.env.jwtSecret}
+      </div>
+    </Container>
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async (context) => {
+export const getServerSideProps: GetServerSideProps = async (context: GetServerSidePropsContext) => {
   return {
     props: {
       page: 'text',

@@ -23,13 +23,28 @@ module.exports = {
         wiggle: 'wiggle 0.3s ease-in-out  ',
         fadeInDown:'fadeInDown 0.6s ease-in-out',
         dropdown:'dropdown 0.8s ease-in-out',
-        slow:'slow 0.8s ease-in-out',
+        slow:'slow 1s ease-in-out',
         sidebarDraw:'sidebarDraw 0.8s ease-in-out',
         modal:'modal 0.6s ease',
         pulse2: 'pulsing 1.5s infinite linear',
-        spin: 'spin 3s infinite linear'
+        spin: 'spin 3s infinite linear',
+        fade:'fade 1s ease'
       },
       keyframes: {
+        fade:{
+          '0%':{
+            opacity: '0',
+             '-webkit-transform': 'scale(0.5)',
+             transform: 'scale(0.5)'
+        },
+        '100%': {
+          opacity: '1',
+          '-webkit-transform': 'scale(1)',
+           transform:' scale(1)'
+      }
+        },
+      
+     
         wiggle: {
           '0%': { width:'0rem' },
           '10%': { width:'0.3rem' },
@@ -55,6 +70,7 @@ module.exports = {
               transform: 'none'
             }
         },
+        
         dropdown :{
           'from':{
             opacity: '0',
