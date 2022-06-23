@@ -2,7 +2,7 @@ import { GetServerSideProps } from 'next'
 import Link from 'next/link'
 import React, { useState } from 'react'
 import { FaqData, FAQInterface } from '../data/faq.data'
-
+import { MdLocationOn } from 'react-icons/md'
 const contactus = () => {
     return (
         <Contactus />
@@ -57,13 +57,14 @@ const Contactus = () => {
                 </div>
             </div>
             <SectionFAQ />
+            <ContactCard />
         </div>
     )
 }
 
 const SectionFAQ = () => {
     return (
-        <div className='font-roboto-condensed my-10 py-10 bg-slate-200'>
+        <div className='font-roboto-condensed mt-10 py-10 bg-slate-200'>
             <div className='container mx-auto px-5'>
                 <div className='shadow-lg p-5 w-full bg-white'>
                     <div className='text-4xl text-center my-2'>
@@ -92,6 +93,57 @@ const FAQCard = ({ data, index }: { data: FAQInterface, index: number }) => {
             </div>
             <div className={`${show ? 'block' : 'hidden'} animate-dropdown `}>
                 <p className='text-sm text-gray-500 '>{data.description}</p>
+            </div>
+        </div>
+    )
+}
+
+
+const ContactCard = () => {
+    interface ContactCard {
+        image: string;
+        title: string;
+        description: string;
+    }
+    const cardDate: ContactCard[] = [
+        {
+            image: 'icon/contactus/location.png',
+            title: 'ADDRESS',
+            description: 'Head Office: Gaushala Chowk, Battisputali Road (Along with NIC Asia Bank & Nearby Hotel Dwarika), Kathmandu, Nepal'
+        },
+        {
+            image: 'icon/contactus/smartphone.png',
+            title: 'PHONE',
+            description: '+977-1-4578809, 4478678'
+        },
+        {
+            image: 'icon/contactus/email.png',
+            title: 'EMAIL',
+            description: '+977-1-4578809, 4478678'
+        }
+    ]
+    return (
+        <div className='bg-orange-500 p-12'>
+            <h1 className='text-center text-3xl font-bold text-white '>Head Office</h1>
+            <div className="grid grid-cols-3 gap-5 justify-items-center pt-12">
+                {
+                    cardDate.map((current, index) => {
+                        return (
+                            <div key={index} className=' shadow-lg  rounded-sm p-5 w-96'>
+                                <div >
+                                    <div className='text-center flex justify-center cursor-pointer'>
+                                        <img src={current.image} className=' hover:scale-110 rounded-full h-20 w-20 p-2 bg-white   text-black' />
+                                    </div>
+                                    <div className='text-center text-white '>
+                                        <h2 className='text-xl font-bold py-2'>{current.title}</h2>
+                                        <p className='text-base text-gray-100'>{current.description}</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        )
+                    })
+                }
             </div>
         </div>
     )

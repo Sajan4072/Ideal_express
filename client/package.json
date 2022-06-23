@@ -5,15 +5,16 @@
   "scripts": {
     "start-dev": "concurrently npm:dev:*",
     "dev:": "next dev -p 3200",
-    "start-prod": "next start",
-    "dev:tailwind":"npx tailwindcss -i ./styles/index.css -o ./styles/globals.css --watch",
+    "prod": "next start",
+    "dev:tailwind": "npx tailwindcss -i ./styles/index.css -o ./styles/globals.css --watch",
     "build": "next build",
     "lint": "next lint"
   },
   "dependencies": {
     "next": "12.1.6",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "react-icons": "^4.4.0"
   },
   "devDependencies": {
     "@types/node": "17.0.35",
