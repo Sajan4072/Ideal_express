@@ -132,7 +132,7 @@ const ContactCard = () => {
                             <div key={index} className=' shadow-lg  rounded-sm p-5 w-96'>
                                 <div >
                                     <div className='text-center flex justify-center cursor-pointer'>
-                                        <img src={current.image} className=' hover:scale-110 rounded-full h-20 w-20 p-2 bg-white   text-black' />
+                                        <img title='image' src={current.image} className=' hover:scale-110 rounded-full h-20 w-20 p-2 bg-white   text-black' />
                                     </div>
                                     <div className='text-center text-white '>
                                         <h2 className='text-xl font-bold py-2'>{current.title}</h2>

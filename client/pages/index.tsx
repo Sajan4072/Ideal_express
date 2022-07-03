@@ -2,6 +2,7 @@ import type { GetServerSideProps, NextPage } from 'next'
 import { MenuData } from '../data/routing.data'
 import { useEffect, useState } from 'react'
 import Link from 'next/link'
+import Image from 'next/image'
 const Home: NextPage = () => {
   return (
     <HomePage />
@@ -16,6 +17,7 @@ const HomePage = () => {
       <Section2 />
       <Section3 />
       <RequestQuote />
+      <Section4 />
       <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   )
@@ -342,6 +344,63 @@ const RequestQuote = () => {
               </div>
             </div>
           </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
+const Section4 = () => {
+  interface OfferInterface {
+    icon: string;
+    title: string;
+    description: string;
+  }
+  const data: OfferInterface[] =
+    [
+      {
+        icon: 'box.png',
+        title: 'PICKUP AND PACKING',
+        description: 'Our Packing and pickup facilities allows customers hassle free shipment solutions'
+      },
+      {
+        icon: 'best-price.png',
+        title: 'AFFORDABLE PRICE',
+        description: 'We provide cheapest price ever for international and national courier both'
+      },
+      {
+        icon: 'order-tracking.png',
+        title: 'TRACKING SERVICE',
+        description: 'We provide you instant updates of the progress of the transportation of goods.'
+      }
+    ]
+  return (
+    <div className='bg-orange-600'>
+      <div className='container text-white mx-auto p-10 '>
+        <div className='grid grid-cols-2'>
+          <div>
+            <h2 className='text-2xl font-bold'>WHAT MAKES US SPECIAL</h2>
+          </div>
+          <div>
+            <p className='px-5 text-justify'>We are ready to give solutions tailored to the customer needs and requirements. To confirm elevated precision in our services, we have developed a complete infrastructure required to handle both national and international delivery of shipments. .</p>
+          </div>
+        </div>
+        <div className='grid grid-cols-3 my-8 gap-8'>
+          {
+            data.map((current, index) => {
+              return (
+                <div key={index} className=' shadow-2xl bg-[#c94400] px-3 py-8  rounded-sm'>
+                  <div className='grid justify-center my-2'>
+                    <img alt="packaging" src={`/icon/offer/${current.icon}`} className="w-100" />
+                  </div>
+                  <div className='text-center'>
+                    <h1 className='text-2xl mb-2'>{current.title}</h1>
+                    <p>{current.description}</p>
+                  </div>
+                </div>
+              )
+            })
+          }
         </div>
       </div>
     </div>
