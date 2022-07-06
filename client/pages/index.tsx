@@ -1,8 +1,6 @@
 import type { GetServerSideProps, NextPage } from 'next'
-import { MenuData } from '../data/routing.data'
-import { useEffect, useState } from 'react'
-import Link from 'next/link'
-import Image from 'next/image'
+import { Ref, useState } from 'react'
+import useFocus from '../utils/custom-hooks/useFocus'
 const Home: NextPage = () => {
   return (
     <HomePage />
@@ -11,18 +9,19 @@ const Home: NextPage = () => {
 export default Home
 const HomePage = () => {
   const [showModal, setShowModal] = useState<boolean>(false);
+  const [quote, showQuote] = useFocus();
   return (
     <div>
-      <Section1 setShowModal={setShowModal} />
+      <Section1 showQuote={showQuote} setShowModal={setShowModal} />
       <Section2 />
       <Section3 />
-      <RequestQuote />
+      <RequestQuote quote={quote} />
       <Section4 />
       <Modal showModal={showModal} setShowModal={setShowModal} />
     </div>
   )
 }
-const Section1 = ({ setShowModal }: { setShowModal: (set: boolean) => void }) => {
+const Section1 = ({ setShowModal, showQuote }: { setShowModal: (set: boolean) => void, showQuote: any }) => {
   return (
     <div>
       <div className='shadow-sm  overflow-hidden min-h-[100vh]  z-0 bg-center bg-cover' style={{ backgroundImage: 'url(/wallpaper/walpaper.jpg)' }}>
@@ -31,16 +30,16 @@ const Section1 = ({ setShowModal }: { setShowModal: (set: boolean) => void }) =>
             <p className='md:text-3xl text-3xl my-8 font-bold'>Discover a better Logistic service with IDEAL EXPRESS</p>
             <p className='text-2xl  mb-4'><span>Track your goods</span></p>
 
-            <div className='flex justify-center pb-8 items-center flex-wrap'>
-              <div className='py-8 px-3 md:w-40 w-32 bg-white flex flex-col items-center text-center text-black'>
+            <div onClick={() => { showQuote() }} className='flex justify-center pb-8 items-center flex-wrap'>
+              <div className='cursor-pointer py-8 px-3 md:w-40 w-32 bg-white flex flex-col items-center text-center text-black'>
                 <img src="/icon/motorbike.png" className='w-8 h-18' alt="location" />
-                <p className='mt-2'>Rate and ship</p>
+                <p className='mt-2'>Quote</p>
               </div>
-              <div className='py-10 px-5 flex flex-col items-center w-30 md:w-40 bg-orange-500   text-black'>
+              <div className='cursor-pointer py-10 px-5 flex flex-col items-center w-30 md:w-40 bg-orange-500   text-black'>
                 <img src="/icon/delivery.png" className=' w-8 h-18' alt="location" />
                 <p className='mt-2 text-white'>Track</p>
               </div>
-              <div className='py-8 px-3 md:w-40 w-32  bg-white flex flex-col items-center text-center text-black'>
+              <div className='cursor-pointer py-8 px-3 md:w-40 w-32  bg-white flex flex-col items-center text-center text-black'>
                 <img src="/icon/location.png" className=' w-8 h-18' alt="location" />
                 <p className='mt-2'>Location</p>
               </div>
@@ -288,9 +287,9 @@ const Modal = ({ showModal, setShowModal }: { showModal: boolean, setShowModal: 
   )
 }
 
-const RequestQuote = () => {
+const RequestQuote = ({ quote }: { quote: Ref<HTMLInputElement> }) => {
   return (
-    <div className='bg-slate-100 relative '>
+    <div className='bg-slate-100 relative ' ref={quote}>
       <div className='container mx-auto px-10  pb-5'>
         <div className='flex -mt-[3.5rem] absolute     z-10'>
           <div className='py-4 px-6 font-sm font-bold text-white bg-orange-500'>Request A Quote</div>

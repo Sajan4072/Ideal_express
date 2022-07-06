@@ -41,16 +41,8 @@ const data: MenuInterface[] = [
     url: "/gallery",
     icon: <MdPhotoLibrary />
   },
-  {
-    name: "Branches",
-    url: "/gallery",
-    icon: <MdOutlineHomeWork />
-  },
-  {
-    name: "Support",
-    url: "/gallery",
-    icon: <AiOutlineHome />
-  },
+
+
 ];
 
 export { data as menuData };

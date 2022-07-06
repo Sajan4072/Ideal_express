@@ -2,9 +2,12 @@ import Link from 'next/link';
 import { useState, useEffect } from 'react'
 import { menuData } from '../data/routing.data';
 import { AiOutlineHome } from 'react-icons/ai';
+import { useRouter } from 'next/router';
 const Header = () => {
   const [fixnav, setFixnav] = useState<boolean>(false);
   const [nav, setNav] = useState<number | never>();
+  const router = useRouter();
+
   const handleScrollChange = () => {
     const position = window.pageYOffset;
     if (position > 100) {
@@ -13,10 +16,7 @@ const Header = () => {
       setFixnav(false)
     }
   }
-  const activeNav = (index: number): any => {
-    setNav(index)
-    sessionStorage.setItem("activeNav", `${index}`)
-  }
+
 
   useEffect(() => {
     window.addEventListener('scroll', handleScrollChange, { passive: true });
@@ -65,15 +65,15 @@ const Header = () => {
             <div className={`md:flex hidden ${fixnav ? '   items-center' : ' items-end'} mt-1  flex justify-center    gap-x-11`}>
               {menuData.map((data, index) => {
                 return (
-                  <div className='group'>
-                    <div className={`flex justify-center text-lg ${!fixnav ? 'hidden' : 'group-hover:text-orange-500'} ${nav === index && 'text-orange-500'} flex justify-center`}>
-                      {data.icon}
-                    </div>
-                    <Link href={data.url}>
-                      <div onClick={() => activeNav(index)} className={`pb-3 ${nav === index && 'active-nav'} relative text-sm font-bold items-end before:hover:wiggle before:contents['']  before:absolute before:h-[0.155rem] before:bottom-0 before:w-[100%] before:hover:bg-orange-500 ${fixnav ? " mt-2" : "mt-8 "} cursor-pointer before:hover:transition before:hover:duration-[0.8s] before:hover:ease-ease  before:hover:delay-[0s] before:hover:animate-wiggle hover:text-orange-500`}>{data.name}</div>
-                    </Link>
-                  </div>
+                  <Link href={data.url}>
+                    <div className='group cursor-pointer'>
+                      <div className={`flex justify-center text-lg ${!fixnav ? 'hidden' : 'group-hover:text-orange-500'} ${router.pathname === data.url && 'text-orange-500'} flex justify-center`}>
+                        {data.icon}
+                      </div>
 
+                      <div className={`pb-3 ${router.pathname === data.url && 'active-nav'} group-hover:active-nav relative text-sm font-bold items-end before:hover:wiggle before:contents['']  before:absolute before:h-[0.155rem] before:bottom-0 before:w-[100%] before:hover:bg-orange-500 ${fixnav ? " mt-2" : "mt-8 "} cursor-pointer before:hover:transition before:hover:duration-[0.8s] before:hover:ease-ease  before:hover:delay-[0s] before:hover:animate-wiggle hover:text-orange-500`}>{data.name}</div>
+                    </div>
+                  </Link>
                 )
               })
               }
@@ -86,3 +86,4 @@ const Header = () => {
 }
 
 export default Header;
+
