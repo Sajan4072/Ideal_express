@@ -149,7 +149,7 @@ const Partner = () => {
                 <div className='grid gap-4 grid-cols-3 '>
                     {partnerData.map((current, index) => {
                         return (
-                            <div>
+                            <div key={index}>
                                 <div className='flex justify-center'>
                                     <img className='border w-auto p-1 h-20' src={`/partner/${current.image}`} alt="" />
                                 </div>
